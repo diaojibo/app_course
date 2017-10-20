@@ -4,7 +4,7 @@ package com.rocklct.equationquiz.model;
  * Created by rocklct on 2017/10/11.
  */
 
-public class LinearEquation {
+public class LinearEquation extends Equation {
     int a, b;
     double root;
 
@@ -17,7 +17,7 @@ public class LinearEquation {
         this.b = b;
     }
 
-    public LinearEquation(int a,int b,int root){
+    public LinearEquation(int a, int b, int root) {
         this.a = a;
         this.b = b;
         this.root = root;

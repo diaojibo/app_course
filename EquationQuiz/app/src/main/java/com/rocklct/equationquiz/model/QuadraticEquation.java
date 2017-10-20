@@ -4,7 +4,7 @@ package com.rocklct.equationquiz.model;
  * Created by rocklct on 2017/10/11.
  */
 
-public class QuadraticEquation {
+public class QuadraticEquation extends Equation {
     int a, b, c;
     double root1, root2;
 

@@ -1,5 +1,8 @@
 package com.rocklct.equationquiz.helper;
 
+import android.util.Log;
+
+import com.rocklct.equationquiz.model.Equation;
 import com.rocklct.equationquiz.model.LinearEquation;
 import com.rocklct.equationquiz.model.QuadraticEquation;
 
@@ -18,6 +21,38 @@ public class EquationHelper {
         return false;
     }
 
+    public static boolean isIntegers(double d) {
+        return areEqual(d, Math.round(d));
+    }
+
+    public static boolean upTwoDecimal(String s) {
+        String splits[] = s.split("\\.");
+        Log.d("decimal", splits[0]);
+        if (splits.length == 2) {
+            String decimals = splits[1];
+            Log.d("decimal", splits[1]);
+            if (decimals.length() > 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean valueValidation(String s) {
+
+        return false;
+    }
+
+    public static boolean isNumber(String s) {
+        try {
+            double test = Double.parseDouble(s);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+
     public static int getRandomNumber(int lower, int upper) {
         return new Random().nextInt(upper - lower) + lower;
     }
@@ -35,7 +70,21 @@ public class EquationHelper {
         int a = e.getA();
         int b = e.getB();
 
-        return Integer.toString(a) + "x" + formatOperateParamer(b) + " = 0";
+        String sa = Integer.toString(a);
+        if (sa.equals("1")) {
+            sa = "";
+        }
+
+        if (sa.equals("-1")) {
+            sa = "-";
+        }
+        return sa + "x" + formatOperateParamer(b) + " = 0";
+    }
+
+    public static boolean areEqualRoots(double x, double y, QuadraticEquation e) {
+        if (areEqual(x, e.getRoot1()) && areEqual(y, e.getRoot2())) return true;
+        if (areEqual(x, e.getRoot2()) && areEqual(y, e.getRoot1())) return true;
+        return false;
     }
 
     public static String getQuadraticEquationString(QuadraticEquation e) {
@@ -43,9 +92,22 @@ public class EquationHelper {
         int b = e.getB();
         int c = e.getC();
 
-        String eq = Integer.toString(a) + "x^2";
+        String sa = Integer.toString(a);
+        if (sa.equals("1")) {
+            sa = "";
+        }
+
+        if (sa.equals("-1")) {
+            sa = "-";
+        }
+
+        String eq = sa + "x^2";
         if (b != 0) {
-            eq = eq + formatOperateParamer(b) + "x";
+            String sb = formatOperateParamer(b);
+            if (sb.substring(sb.length() - 1).equals("1")) {
+                sb = sb.substring(0, sb.length() - 1);
+            }
+            eq = eq + sb + "x";
         }
         return eq + formatOperateParamer(c) + " = 0";
     }
