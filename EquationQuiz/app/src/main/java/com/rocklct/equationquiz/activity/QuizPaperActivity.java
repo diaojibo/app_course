@@ -114,7 +114,7 @@ public class QuizPaperActivity extends AppCompatActivity {
         String ans1;
         ans1 = root1View.getText().toString();
         if (EquationHelper.upTwoDecimal(ans1)) {
-            Toast.makeText(this, "Sorry!Please keep your input number in 2 decimal places", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Sorry!Please keep your input number in 2 decimal places", Toast.LENGTH_SHORT).show();
         } else if (!ans1.equals("")) {
             Double root1 = Double.parseDouble(ans1);
             isAnswer = true;
@@ -136,7 +136,7 @@ public class QuizPaperActivity extends AppCompatActivity {
             correctInformation.setVisibility(TextView.VISIBLE);
             correctAnswer.setVisibility(TextView.VISIBLE);
         } else {
-            Toast.makeText(this, "Your input is empty!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Your input is empty!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -147,9 +147,9 @@ public class QuizPaperActivity extends AppCompatActivity {
         if (e.getRoot1() == e.getRoot2()) {
             ans1 = root1View.getText().toString();
             if (EquationHelper.upTwoDecimal(ans1)) {
-                Toast.makeText(this, "Sorry!Please keep your input number in 2 decimal places", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Sorry!Please keep your input number in 2 decimal places", Toast.LENGTH_SHORT).show();
             } else if (ans1.equals("")) {
-                Toast.makeText(this, "Your input is empty!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Your input is empty!", Toast.LENGTH_SHORT).show();
             } else {
                 isAnswer = true;
                 double root1 = Double.parseDouble(ans1);
@@ -174,9 +174,9 @@ public class QuizPaperActivity extends AppCompatActivity {
             ans1 = root1View.getText().toString();
             ans2 = root2View.getText().toString();
             if (EquationHelper.upTwoDecimal(ans1) || EquationHelper.upTwoDecimal(ans2)) {
-                Toast.makeText(this, "Sorry!Please keep your input number in 2 decimal places", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Sorry!Please keep your input number in 2 decimal places", Toast.LENGTH_SHORT).show();
             } else if (ans1.equals("") || ans2.equals("")) {
-                Toast.makeText(this, "Your input is empty!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Your input is empty!", Toast.LENGTH_SHORT).show();
             } else {
                 isAnswer = true;
                 double root1 = Double.parseDouble(ans1);

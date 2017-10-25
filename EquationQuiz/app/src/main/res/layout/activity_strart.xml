@@ -15,7 +15,7 @@
         android:layout_marginTop="66dp"
         android:text="algebraic equations"
         android:textColor="@color/colorAccent"
-        android:textSize="36sp"
+        android:textSize="32sp"
         android:textStyle="bold|italic"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -41,14 +41,16 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="81dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="27dp"
         android:text="Name:   Li-Chengtao"
         android:textColor="@android:color/holo_green_dark"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
@@ -59,7 +61,7 @@
         android:layout_marginTop="32dp"
         android:text="University Number:3035418634"
         android:textColor="@android:color/holo_green_dark"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
